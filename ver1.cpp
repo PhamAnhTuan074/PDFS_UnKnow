@@ -31,8 +31,8 @@ int main() {
 
   //  auto start = std::chrono::high_resolution_clock::now(); // Bắt đầu đo thời gian
 
-    freopen("T5.inp", "r", stdin);
-    freopen("T5.out", "w", stdout);
+    freopen("T1.inp", "r", stdin);
+   // freopen("T4.out", "w", stdout);
     cin >> n >> m >> E;
     if (E % 2 != 0) E--; 
     for (int i = 0; i < n; i++)
@@ -44,14 +44,8 @@ int main() {
     path[cnt].push_back({sx, sy, curE, d[sx][sy]});
     stL.push({sx, sy});
     run();
+    printD();
 
-    cout<<"Number of routes: " << cnt + 1 << endl;
-
-    for (int i = 0; i <= cnt; i++) {
-        cout << "Route " << i + 1 << endl;
-        for (const auto& s : path[i])
-            cout << "x=" << s.x << " y=" << s.y << " d=" << s.d << " e=" << s.e << endl;
-    }
 
     // auto end = std::chrono::high_resolution_clock::now(); // Kết thúc đo thời gian
     // std::chrono::duration<double> diff = end - start;
@@ -60,9 +54,20 @@ int main() {
 }
 
 void printD() {
-    for (int i = 0; i < n; i++, cout << endl)
-        for (int j = 0; j < m; j++)
-            cout << d[i][j] << " ";
+    cout<<"Number of routes: " << cnt + 1 << endl;
+
+    for (int i = 0; i <= cnt; i++) {
+        cout << "Route " << i + 1 << endl;
+        for (const auto& s : path[i])
+            cout << "x=" << s.x << " y=" << s.y << " d=" << s.d << " e=" << s.e << endl;
+    }
+    cout<<"======================"<<endl;
+    int total_steps = 0;
+    for ( int i =0; i<=cnt;i++){
+       auto it = path[i][path[i].size()-1];
+        total_steps += it.e + it.d;
+    }
+    cout<<"Total steps: " << total_steps << endl;
 }
 
 void save(int x, int y) {
