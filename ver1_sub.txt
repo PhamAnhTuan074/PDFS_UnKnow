@@ -4,9 +4,14 @@
     - sx, sy: vị trí xuất phát (a[i][j] == 2)
 
 Kiểm tra điều kiện năng lượng:
-    Nếu E < 4 * max(n, m):
+    Điều kiện là E >= bán kính môi trường khám phá 
+        Với tâm là vị trí xuất phát của robot
+   
+    Nêu E < bán kính môi trường khám phá 
         Thông báo "Năng lượng không đủ để tìm đường đi!"
         Kết thúc chương trình
+
+    ( Ta sẽ xét các trường hợp E >= 4 * max(n, m))
 
 Khởi tạo các biến khác:
     - d[][]: ma trận lưu khoảng cách từ xuất phát
