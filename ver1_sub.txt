@@ -11,7 +11,7 @@ Kiểm tra điều kiện năng lượng:
         Thông báo "Năng lượng không đủ để tìm đường đi!"
         Kết thúc chương trình
 
-    ( Ta sẽ xét các trường hợp E > 4 * max(n, m))
+    ( Ta sẽ xét các trường hợp E >= 4 * max(n, m))
 
 Khởi tạo các biến khác:
     - d[][]: ma trận lưu khoảng cách từ xuất phát
